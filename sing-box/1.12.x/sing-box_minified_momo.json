@@ -4,7 +4,7 @@
 		"level":"warn",
 		"timestamp":true
 	},
-	"dns": {
+	"dns":{
 	  	"servers":[
 	  		{"tag":"google","type":"https","server":"8.8.8.8","detour":"proxy"},
 	  		{"tag":"local","type":"https","server":"223.5.5.5"},
@@ -21,8 +21,8 @@
 	  	  	{"rule_set":"cn_domain","action":"route","server":"local"},
 	  	  	{"query_type":["A","AAAA"],"action":"route","server":"remote","rewrite_ttl":1}
 	  	],
-	  	"final": "google",
-	  	"independent_cache": true
+	  	"final":"google",
+	  	"independent_cache":true
 	},
 	"inbounds":[
 		{"tag":"dns-in","type":"direct","listen":"::","listen_port":1053},
