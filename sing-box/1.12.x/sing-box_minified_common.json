@@ -4,25 +4,25 @@
 		"level":"warn",
 		"timestamp":true
 	},
-	"dns": {
+	"dns":{
 	  	"servers":[
 	  		{"tag":"google","type":"https","server":"8.8.8.8","detour":"proxy"},
 	  		{"tag":"local","type":"https","server":"223.5.5.5"},
-	  	  {"tag":"remote","type":"fakeip","inet4_range":"198.18.0.0/15","inet6_range":"fc00::/18"}
+	  	  	{"tag":"remote","type":"fakeip","inet4_range":"198.18.0.0/15","inet6_range":"fc00::/18"}
 	  	],	
 	  	"rules":[
 	  		{"domain_suffix":["argotunnel.com","tunnel.prod.cloudflare.com","api.pki.cloudflare.com","nic.changeip.com","update.changeip.com","api.cloudflare.com","api.letsencrypt.org","ddns.oray.com","66666.host","ipip.net","666666.host","ipw.cn","3322.net"],"action":"route","server":"local","disable_cache":true},
-			  {"domain_suffix":["lan","local","home.arpa"],"action":"route","server":"local"},
-			  {"domain_keyword":["router","openwrt","immortalwrt","luci"],"action":"route","server":"local"},
-			  {"ip_is_private":true,"action":"route","server":"local"},
-	  	  {"clash_mode":"Direct","action":"route","server":"local"},
-	  	  {"clash_mode":"Global","action":"route","server":"remote"},
-	  	  {"query_type":"HTTPS","action":"reject"},
-	  	  {"rule_set":"cn_domain","action":"route","server":"local"},
-	  	  {"query_type":["A","AAAA"],"action":"route","server":"remote","rewrite_ttl":1}
+			{"domain_suffix":["lan","local","home.arpa"],"action":"route","server":"local"},
+			{"domain_keyword":["router","openwrt","immortalwrt","luci"],"action":"route","server":"local"},
+			{"ip_is_private":true,"action":"route","server":"local"},
+	  	  	{"clash_mode":"Direct","action":"route","server":"local"},
+	  	  	{"clash_mode":"Global","action":"route","server":"remote"},
+	  	  	{"query_type":"HTTPS","action":"reject"},
+	  	  	{"rule_set":"cn_domain","action":"route","server":"local"},
+	  	  	{"query_type":["A","AAAA"],"action":"route","server":"remote","rewrite_ttl":1}
 	  	],
-	  	"final": "google",
-	  	"independent_cache": true
+	  	"final":"google",
+	  	"independent_cache":true
 	},
 	"inbounds":[
 		{"tag":"dns-in","type":"direct","listen":"::","listen_port":1053},
